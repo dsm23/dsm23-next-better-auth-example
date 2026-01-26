@@ -1,0 +1,35 @@
+shared:
+  common: &common_checks
+    - check-success = pr-title
+
+pull_request_rules:
+  - name: automatic approval
+    conditions:
+      - author != renovate[bot]
+      - and: *common_checks
+    actions:
+      review:
+        type: APPROVE
+        message: "Automatically approving {{ author }}"
+
+  - name: automatic approval for Renovate pull requests
+    conditions:
+      - author = renovate[bot]
+      - and: *common_checks
+    actions:
+      review:
+        type: APPROVE
+        message: Automatically approving renovate
+
+  - name: Automatically merge when GitHub Actions jobs succeed
+    conditions:
+      - and: *common_checks
+    actions:
+      merge:
+        method: merge
+
+  - name: automatic deletion of head branch after merge
+    conditions:
+      - merged
+    actions:
+      delete_head_branch:
