@@ -35,6 +35,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# lefthook
+lefthook-local.yml
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

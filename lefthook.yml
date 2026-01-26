@@ -1,0 +1,24 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      run: ./node_modules/.bin/prettier --check --ignore-unknown {staged_files}
+
+    stylelint:
+      run: ./node_modules/.bin/stylelint --allow-empty-input {staged_files}
+      glob: "*.css"
+
+    # eslint:
+    #   run: ./node_modules/.bin/eslint {staged_files}
+    #   glob:
+    #     - "*.ts"
+    #     - "*.js"
+    #     - "*.tsx"
+    #     - "*.jsx"
+    #     - "*.md"
+    #     - "*.mdx"
+
+commit-msg:
+  commands:
+    commitlint:
+      run: ./node_modules/.bin/commitlint --edit {1}
