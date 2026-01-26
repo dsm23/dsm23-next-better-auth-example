@@ -1,5 +1,6 @@
 shared:
   common: &common_checks
+    - check-success = dependency-review
     - check-success = format
     - check-success = pr-title
 
