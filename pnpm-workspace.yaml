@@ -1,0 +1,8 @@
+blockExoticSubdeps: true
+
+onlyBuiltDependencies:
+  - lefthook
+
+savePrefix: ""
+
+sideEffectsCache: false
