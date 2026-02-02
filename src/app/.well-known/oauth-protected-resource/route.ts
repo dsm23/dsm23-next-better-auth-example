@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { serverClient } from "@/lib/server-client";
+import { serverClient } from "~/lib/server-client";
 
 export async function GET(): Promise<NextResponse> {
   const config = await serverClient.getProtectedResourceMetadata({

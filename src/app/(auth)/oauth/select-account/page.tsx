@@ -1,12 +1,7 @@
 import { headers } from "next/headers";
 import type { Metadata } from "next";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
-import { auth } from "@/src/lib/auth";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { auth } from "~/lib/auth";
 import { AnotherAccountBtn, SelectAccountBtn } from "./account-button";
 
 export const metadata: Metadata = {

@@ -1,26 +1,26 @@
 "use client";
 
-import { Button } from "@/src/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
+import { Button } from "~/components/ui/button";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/src/components/ui/field";
-import { Input } from "@/src/components/ui/input";
+} from "~/components/ui/field";
+import { Input } from "~/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/src/components/ui/select";
-import { useInviteMemberMutation } from "@/src/data/organization/invitation-member-mutation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
-import type { OrganizationRole } from "@/src/lib/auth";
+} from "~/components/ui/select";
+import { useInviteMemberMutation } from "~/data/organization/invitation-member-mutation";
+import type { OrganizationRole } from "~/lib/auth";
 
 const ORGANIZATION_ROLES = {
   ADMIN: "admin",

@@ -1,5 +1,5 @@
-import { authClient } from "@/src/lib/auth-client";
 import { useQuery } from "@tanstack/react-query";
+import { authClient } from "~/lib/auth-client";
 import { subscriptionKeys } from "./keys";
 
 export async function getSubscriptionList() {

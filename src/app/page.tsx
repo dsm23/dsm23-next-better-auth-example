@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
-import EntryButton from "@/src/components/entry-button";
-import { auth } from "@/src/lib/auth";
+import EntryButton from "~/components/entry-button";
+import { auth } from "~/lib/auth";
 
 const features: { name: string; link: string }[] = [
   {

@@ -1,15 +1,11 @@
 "use client";
 
 import { useId, useState } from "react";
-import { SubscriptionTierLabel } from "@/src/components/subscription-tier";
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
+import { ArrowUpFromLine, CreditCard, RefreshCcw } from "lucide-react";
+import { SubscriptionTierLabel } from "~/components/subscription-tier";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -17,15 +13,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/src/components/ui/dialog";
-import { Label } from "@/src/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/src/components/ui/radio-group";
-import { Skeleton } from "@/src/components/ui/skeleton";
-import { useSubscriptionCancelMutation } from "@/src/data/subscription/subscription-cancel-mutation";
-import { useSubscriptionListQuery } from "@/src/data/subscription/subscription-list-query";
-import { useSubscriptionRestoreMutation } from "@/src/data/subscription/subscription-restore-mutation";
-import { useSubscriptionUpgradeMutation } from "@/src/data/subscription/subscription-upgrade-mutation";
-import { ArrowUpFromLine, CreditCard, RefreshCcw } from "lucide-react";
+} from "~/components/ui/dialog";
+import { Label } from "~/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import { Skeleton } from "~/components/ui/skeleton";
+import { useSubscriptionCancelMutation } from "~/data/subscription/subscription-cancel-mutation";
+import { useSubscriptionListQuery } from "~/data/subscription/subscription-list-query";
+import { useSubscriptionRestoreMutation } from "~/data/subscription/subscription-restore-mutation";
+import { useSubscriptionUpgradeMutation } from "~/data/subscription/subscription-upgrade-mutation";
 
 const SubscriptionCard = () => {
   const { data: subscriptions, isLoading } = useSubscriptionListQuery();

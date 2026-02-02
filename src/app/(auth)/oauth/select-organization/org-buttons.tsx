@@ -1,15 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
-import { authClient } from "@/src/lib/auth-client";
 import { toast } from "sonner";
 import type { Organization } from "better-auth/plugins";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import { authClient } from "~/lib/auth-client";
 
 export function SelectOrganizationBtn({
   organization,

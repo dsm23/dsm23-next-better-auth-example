@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { auth } from "~/lib/auth";
 
 export async function GET(): Promise<NextResponse> {
   const config = await auth.api.getOAuthServerConfig();

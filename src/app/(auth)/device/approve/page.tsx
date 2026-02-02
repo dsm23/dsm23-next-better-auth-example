@@ -2,12 +2,12 @@
 
 import { useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Alert, AlertDescription } from "@/src/components/ui/alert";
-import { Button } from "@/src/components/ui/button";
-import { Card } from "@/src/components/ui/card";
-import { useSessionQuery } from "@/src/data/user/session-query";
-import { authClient } from "@/src/lib/auth-client";
 import { Check, Loader2, X } from "lucide-react";
+import { Alert, AlertDescription } from "~/components/ui/alert";
+import { Button } from "~/components/ui/button";
+import { Card } from "~/components/ui/card";
+import { useSessionQuery } from "~/data/user/session-query";
+import { authClient } from "~/lib/auth-client";
 
 export default function Page() {
   const router = useRouter();

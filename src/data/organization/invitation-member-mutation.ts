@@ -1,7 +1,7 @@
-import { authClient } from "@/src/lib/auth-client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import type { OrganizationRole } from "@/src/lib/auth";
+import { authClient } from "~/lib/auth-client";
+import type { OrganizationRole } from "~/lib/auth";
 import { organizationKeys } from "./keys";
 
 export interface InviteMemberParams {

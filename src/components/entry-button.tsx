@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Session } from "@/src/lib/auth";
+import type { Session } from "~/lib/auth";
 import { Button } from "./ui/button";
 
 type Props = {

@@ -1,7 +1,7 @@
 import type * as React from "react";
-import { cn } from "@/src/lib/utils";
 import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Slot } from "@radix-ui/react-slot";
+import { cn } from "~/lib/utils";
 
 const Breadcrumb = ({ ref, ...props }) => (
   <nav ref={ref} aria-label="breadcrumb" {...props} />

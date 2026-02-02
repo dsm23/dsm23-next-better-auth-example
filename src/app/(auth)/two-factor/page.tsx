@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { TwoFactorTotpForm } from "@/src/components/forms/two-factor-totp-form";
-import { Button } from "@/src/components/ui/button";
+import { TwoFactorTotpForm } from "~/components/forms/two-factor-totp-form";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/components/ui/card";
 
 export default function Page() {
   const router = useRouter();

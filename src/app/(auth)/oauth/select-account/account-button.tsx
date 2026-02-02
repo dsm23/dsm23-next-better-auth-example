@@ -2,15 +2,11 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
-import { authClient } from "@/src/lib/auth-client";
 import { toast } from "sonner";
-import type { Session } from "@/src/lib/auth";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import { authClient } from "~/lib/auth-client";
+import type { Session } from "~/lib/auth";
 
 export function SelectAccountBtn({ session }: { session: Partial<Session> }) {
   return (

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { Button } from "@/src/components/ui/button";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,14 +11,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
-import { useSessionQuery } from "@/src/data/user/session-query";
-import { useSignOutMutation } from "@/src/data/user/sign-out-mutation";
-import { authClient } from "@/src/lib/auth-client";
-import { Loader2 } from "lucide-react";
-import { toast } from "sonner";
+} from "~/components/ui/card";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { useSessionQuery } from "~/data/user/session-query";
+import { useSignOutMutation } from "~/data/user/sign-out-mutation";
+import { authClient } from "~/lib/auth-client";
 
 export default function Page() {
   const [email, setEmail] = useState("");

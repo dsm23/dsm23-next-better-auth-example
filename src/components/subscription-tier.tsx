@@ -1,7 +1,7 @@
 import type React from "react";
-import { cn } from "@/src/lib/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
+import { cn } from "~/lib/utils";
 
 const VALID_TIERS = ["free", "plus", "pro"] as const;
 type Tier = (typeof VALID_TIERS)[number];

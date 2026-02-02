@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ForgetPasswordForm } from "@/src/components/forms/forget-password-form";
-import { Alert, AlertDescription } from "@/src/components/ui/alert";
-import { Button } from "@/src/components/ui/button";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ForgetPasswordForm } from "~/components/forms/forget-password-form";
+import { Alert, AlertDescription } from "~/components/ui/alert";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,8 +13,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+} from "~/components/ui/card";
 
 export default function Page() {
   const [isSubmitted, setIsSubmitted] = useState(false);

@@ -1,14 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { TwoFactorEmailOtpForm } from "@/src/components/forms/two-factor-email-otp-form";
+import { TwoFactorEmailOtpForm } from "~/components/forms/two-factor-email-otp-form";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/components/ui/card";
 
 export default function Page() {
   const router = useRouter();

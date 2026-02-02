@@ -2,48 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChangePasswordForm } from "@/src/components/forms/change-password-form";
-import { TwoFactorDisableForm } from "@/src/components/forms/two-factor-disable-form";
-import { TwoFactorEnableForm } from "@/src/components/forms/two-factor-enable-form";
-import { TwoFactorQrForm } from "@/src/components/forms/two-factor-qr-form";
-import { UpdateUserForm } from "@/src/components/forms/update-user-form";
-import { Alert, AlertDescription, AlertTitle } from "@/src/components/ui/alert";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/src/components/ui/dialog";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/src/components/ui/table";
-import { useRevokeSessionMutation } from "@/src/data/user/revoke-session-mutation";
-import { useSessionQuery } from "@/src/data/user/session-query";
-import { useSignOutMutation } from "@/src/data/user/sign-out-mutation";
-import { authClient } from "@/src/lib/auth-client";
 import { MobileIcon } from "@radix-ui/react-icons";
 import {
   Edit,
@@ -60,7 +18,45 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { UAParser } from "ua-parser-js";
-import type { Session } from "@/src/lib/auth";
+import { ChangePasswordForm } from "~/components/forms/change-password-form";
+import { TwoFactorDisableForm } from "~/components/forms/two-factor-disable-form";
+import { TwoFactorEnableForm } from "~/components/forms/two-factor-enable-form";
+import { TwoFactorQrForm } from "~/components/forms/two-factor-qr-form";
+import { UpdateUserForm } from "~/components/forms/update-user-form";
+import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/dialog";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
+import { useRevokeSessionMutation } from "~/data/user/revoke-session-mutation";
+import { useSessionQuery } from "~/data/user/session-query";
+import { useSignOutMutation } from "~/data/user/sign-out-mutation";
+import { authClient } from "~/lib/auth-client";
+import type { Session } from "~/lib/auth";
 
 const UserCard = (props: {
   session: Session | null;

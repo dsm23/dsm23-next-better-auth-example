@@ -2,31 +2,27 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
+import { ChevronDown, PlusCircle } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/src/components/ui/command";
+} from "~/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/src/components/ui/popover";
-import { getQueryClient } from "@/src/data/query-client";
-import { userKeys } from "@/src/data/user/keys";
-import { useSessionQuery } from "@/src/data/user/session-query";
-import { authClient } from "@/src/lib/auth-client";
-import { ChevronDown, PlusCircle } from "lucide-react";
-import type { SessionData } from "@/src/data/user/session-query";
-import type { DeviceSession } from "@/src/lib/auth";
+} from "~/components/ui/popover";
+import { getQueryClient } from "~/data/query-client";
+import { userKeys } from "~/data/user/keys";
+import { useSessionQuery } from "~/data/user/session-query";
+import { authClient } from "~/lib/auth-client";
+import type { SessionData } from "~/data/user/session-query";
+import type { DeviceSession } from "~/lib/auth";
 
 export default function AccountSwitcher({
   deviceSessions,

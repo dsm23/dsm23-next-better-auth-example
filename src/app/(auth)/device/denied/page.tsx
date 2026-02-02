@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/src/components/ui/button";
-import { Card } from "@/src/components/ui/card";
 import { X } from "lucide-react";
+import { Button } from "~/components/ui/button";
+import { Card } from "~/components/ui/card";
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
-import { authClient } from "@/src/lib/auth-client";
 import { useQuery } from "@tanstack/react-query";
+import { authClient } from "~/lib/auth-client";
 import { userKeys } from "./keys";
 
 export async function getSession() {

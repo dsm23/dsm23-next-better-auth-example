@@ -1,12 +1,12 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { BackgroundRippleEffect } from "@/src/components/background-ripple-effect";
-import Header from "@/src/components/header";
-import Providers from "@/src/components/providers";
-import { createMetadata } from "@/src/lib/metadata";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { BackgroundRippleEffect } from "~/components/background-ripple-effect";
+import Header from "~/components/header";
+import Providers from "~/components/providers";
+import { createMetadata } from "~/lib/metadata";
 
 export const metadata: Metadata = createMetadata({
   title: {
