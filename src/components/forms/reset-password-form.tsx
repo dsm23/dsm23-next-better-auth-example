@@ -1,20 +1,20 @@
 "use client";
 
 import { useTransition } from "react";
-import { Button } from "@/src/components/ui/button";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@/src/components/ui/field";
-import { PasswordInput } from "@/src/components/ui/password-input";
-import { authClient } from "@/src/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
+import { Button } from "~/components/ui/button";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "~/components/ui/field";
+import { PasswordInput } from "~/components/ui/password-input";
+import { authClient } from "~/lib/auth-client";
 
 const resetPasswordSchema = z
   .object({

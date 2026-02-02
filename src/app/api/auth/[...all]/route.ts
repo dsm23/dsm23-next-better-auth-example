@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { auth } from "@/src/lib/auth";
 import { toNextJsHandler } from "better-auth/next-js";
+import { auth } from "~/lib/auth";
 
 function addCorsHeaders(url: URL, headers: Headers) {
   if (

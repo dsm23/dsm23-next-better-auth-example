@@ -1,5 +1,5 @@
-import { authClient } from "@/src/lib/auth-client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { authClient } from "~/lib/auth-client";
 import { organizationKeys } from "./keys";
 
 export interface OrganizationActiveParams {

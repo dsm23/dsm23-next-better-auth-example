@@ -1,14 +1,14 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { ResetPasswordForm } from "@/src/components/forms/reset-password-form";
+import { ResetPasswordForm } from "~/components/forms/reset-password-form";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "~/components/ui/card";
 
 export default function Page() {
   const router = useRouter();

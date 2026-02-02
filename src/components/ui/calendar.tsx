@@ -1,9 +1,9 @@
 "use client";
 
 import type * as React from "react";
-import { buttonVariants } from "@/src/components/ui/button";
-import { cn } from "@/src/lib/utils";
 import { DayPicker } from "react-day-picker";
+import { buttonVariants } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 

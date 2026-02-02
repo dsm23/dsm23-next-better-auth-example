@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { CardFooter } from "@/src/components/ui/card";
-import { authClient } from "@/src/lib/auth-client";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "~/components/ui/button";
+import { CardFooter } from "~/components/ui/card";
+import { authClient } from "~/lib/auth-client";
 
 export function ConsentBtns() {
   const [loading, setLoading] = useState(false);

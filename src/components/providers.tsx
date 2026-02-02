@@ -1,8 +1,8 @@
 "use client";
 
-import { getQueryClient } from "@/src/data/query-client";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { getQueryClient } from "~/data/query-client";
 import { ThemeProvider } from "./theme-provider";
 import { Toaster } from "./ui/sonner";
 

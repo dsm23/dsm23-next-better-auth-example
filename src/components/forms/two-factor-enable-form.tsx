@@ -1,23 +1,23 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { Button } from "@/src/components/ui/button";
-import CopyButton from "@/src/components/ui/copy-button";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@/src/components/ui/field";
-import { Input } from "@/src/components/ui/input";
-import { PasswordInput } from "@/src/components/ui/password-input";
-import { authClient } from "@/src/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import QRCode from "react-qr-code";
 import { toast } from "sonner";
 import * as z from "zod";
+import { Button } from "~/components/ui/button";
+import CopyButton from "~/components/ui/copy-button";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "~/components/ui/field";
+import { Input } from "~/components/ui/input";
+import { PasswordInput } from "~/components/ui/password-input";
+import { authClient } from "~/lib/auth-client";
 
 const passwordSchema = z.object({
   password: z.string().min(8, "Password must be at least 8 characters."),

@@ -1,21 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { CreateOrganizationForm } from "@/src/components/forms/create-organization-form";
-import { InviteMemberForm } from "@/src/components/forms/invite-member-form";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
-import CopyButton from "@/src/components/ui/copy-button";
+import { ChevronDownIcon, PlusIcon } from "@radix-ui/react-icons";
+import { AnimatePresence, motion } from "framer-motion";
+import { Loader2, MailPlus } from "lucide-react";
+import { CreateOrganizationForm } from "~/components/forms/create-organization-form";
+import { InviteMemberForm } from "~/components/forms/invite-member-form";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import CopyButton from "~/components/ui/copy-button";
 import {
   Dialog,
   DialogContent,
@@ -23,25 +17,22 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/src/components/ui/dialog";
+} from "~/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
-import { Label } from "@/src/components/ui/label";
-import { Skeleton } from "@/src/components/ui/skeleton";
-import { useInvitationCancelMutation } from "@/src/data/organization/invitation-cancel-mutation";
-import { useMemberRemoveMutation } from "@/src/data/organization/member-remove-mutation";
-import { useOrganizationActiveMutation } from "@/src/data/organization/organization-active-mutation";
-import { useOrganizationDetailQuery } from "@/src/data/organization/organization-detail-query";
-import { useOrganizationListQuery } from "@/src/data/organization/organization-list-query";
-import { useSessionQuery } from "@/src/data/user/session-query";
-import { ChevronDownIcon, PlusIcon } from "@radix-ui/react-icons";
-import { AnimatePresence, motion } from "framer-motion";
-import { Loader2, MailPlus } from "lucide-react";
-import type { OrganizationRole, Session } from "@/src/lib/auth";
+} from "~/components/ui/dropdown-menu";
+import { Label } from "~/components/ui/label";
+import { Skeleton } from "~/components/ui/skeleton";
+import { useInvitationCancelMutation } from "~/data/organization/invitation-cancel-mutation";
+import { useMemberRemoveMutation } from "~/data/organization/member-remove-mutation";
+import { useOrganizationActiveMutation } from "~/data/organization/organization-active-mutation";
+import { useOrganizationDetailQuery } from "~/data/organization/organization-detail-query";
+import { useOrganizationListQuery } from "~/data/organization/organization-list-query";
+import { useSessionQuery } from "~/data/user/session-query";
+import type { OrganizationRole, Session } from "~/lib/auth";
 
 const ORGANIZATION_ROLES = {
   OWNER: "owner",

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "@/src/lib/utils";
 import { motion } from "framer-motion";
+import { cn } from "~/lib/utils";
 
 type Tab = {
   title: string;

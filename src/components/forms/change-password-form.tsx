@@ -1,19 +1,19 @@
 "use client";
 
-import { Button } from "@/src/components/ui/button";
-import { Checkbox } from "@/src/components/ui/checkbox";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
+import { Button } from "~/components/ui/button";
+import { Checkbox } from "~/components/ui/checkbox";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/src/components/ui/field";
-import { PasswordInput } from "@/src/components/ui/password-input";
-import { useChangePasswordMutation } from "@/src/data/user/change-password-mutation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
+} from "~/components/ui/field";
+import { PasswordInput } from "~/components/ui/password-input";
+import { useChangePasswordMutation } from "~/data/user/change-password-mutation";
 
 const changePasswordSchema = z
   .object({

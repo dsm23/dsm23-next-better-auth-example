@@ -2,14 +2,6 @@ import { headers } from "next/headers";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { Logo } from "@/src/components/logo";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Card, CardContent } from "@/src/components/ui/card";
-import { auth } from "@/src/lib/auth";
 import {
   ArrowLeftRight,
   ArrowUpRight,
@@ -17,6 +9,10 @@ import {
   Mail,
   User,
 } from "lucide-react";
+import { Logo } from "~/components/logo";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Card, CardContent } from "~/components/ui/card";
+import { auth } from "~/lib/auth";
 import { ConsentBtns } from "./consent-buttons";
 
 export const metadata: Metadata = {

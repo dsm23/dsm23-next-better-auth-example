@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SignInForm } from "@/src/components/forms/sign-in-form";
-import { LastUsedIndicator } from "@/src/components/last-used-indicator";
-import { Button } from "@/src/components/ui/button";
+import { Key } from "lucide-react";
+import { toast } from "sonner";
+import { SignInForm } from "~/components/forms/sign-in-form";
+import { LastUsedIndicator } from "~/components/last-used-indicator";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -13,12 +15,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { authClient } from "@/src/lib/auth-client";
-import { getCallbackURL } from "@/src/lib/shared";
-import { cn } from "@/src/lib/utils";
-import { Key } from "lucide-react";
-import { toast } from "sonner";
+} from "~/components/ui/card";
+import { authClient } from "~/lib/auth-client";
+import { getCallbackURL } from "~/lib/shared";
+import { cn } from "~/lib/utils";
 
 export default function SignIn() {
   const [isMounted, setIsMounted] = useState(false);

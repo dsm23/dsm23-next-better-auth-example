@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import AccountSwitcher from "@/src/components/account-switch";
-import { auth } from "@/src/lib/auth";
+import AccountSwitcher from "~/components/account-switch";
+import { auth } from "~/lib/auth";
 import OrganizationCard from "./_components/organization-card";
 import SubscriptionCard from "./_components/subscription-card";
 import UserCard from "./_components/user-card";

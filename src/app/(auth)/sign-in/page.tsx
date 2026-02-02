@@ -2,12 +2,12 @@
 
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import SignIn from "@/src/app/(auth)/sign-in/_components/sign-in";
-import { SignUp } from "@/src/app/(auth)/sign-in/_components/sign-up";
-import { Tabs } from "@/src/components/ui/tabs2";
-import { authClient } from "@/src/lib/auth-client";
-import { getCallbackURL } from "@/src/lib/shared";
 import { toast } from "sonner";
+import SignIn from "~/app/(auth)/sign-in/_components/sign-in";
+import { SignUp } from "~/app/(auth)/sign-in/_components/sign-up";
+import { Tabs } from "~/components/ui/tabs2";
+import { authClient } from "~/lib/auth-client";
+import { getCallbackURL } from "~/lib/shared";
 
 export default function Page() {
   const router = useRouter();

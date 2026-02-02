@@ -1,13 +1,13 @@
 "use client";
 
 import type * as React from "react";
-import { cn } from "@/src/lib/utils";
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import {
   CheckIcon,
   ChevronRightIcon,
   DotFilledIcon,
 } from "@radix-ui/react-icons";
+import { cn } from "~/lib/utils";
 
 const ContextMenu = ContextMenuPrimitive.Root;
 

@@ -1,21 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/src/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2, X } from "lucide-react";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
+import { Button } from "~/components/ui/button";
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/src/components/ui/field";
-import { Input } from "@/src/components/ui/input";
-import { useUpdateUserMutation } from "@/src/data/user/update-user-mutation";
-import { useImagePreview } from "@/src/hooks/use-image-preview";
-import { convertImageToBase64 } from "@/src/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, X } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
+} from "~/components/ui/field";
+import { Input } from "~/components/ui/input";
+import { useUpdateUserMutation } from "~/data/user/update-user-mutation";
+import { useImagePreview } from "~/hooks/use-image-preview";
+import { convertImageToBase64 } from "~/lib/utils";
 
 const updateUserSchema = z.object({
   name: z

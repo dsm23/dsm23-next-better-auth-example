@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Button } from "@/src/components/ui/button";
+import { AlertCircle, CheckIcon, XIcon } from "lucide-react";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,12 +12,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { Skeleton } from "@/src/components/ui/skeleton";
-import { useInviteAcceptMutation } from "@/src/data/organization/invitation-accept-mutation";
-import { useInvitationQuery } from "@/src/data/organization/invitation-query";
-import { useInviteRejectMutation } from "@/src/data/organization/invitation-reject-mutation";
-import { AlertCircle, CheckIcon, XIcon } from "lucide-react";
+} from "~/components/ui/card";
+import { Skeleton } from "~/components/ui/skeleton";
+import { useInviteAcceptMutation } from "~/data/organization/invitation-accept-mutation";
+import { useInvitationQuery } from "~/data/organization/invitation-query";
+import { useInviteRejectMutation } from "~/data/organization/invitation-reject-mutation";
 
 export default function Page() {
   const params = useParams<{

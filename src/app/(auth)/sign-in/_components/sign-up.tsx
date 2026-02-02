@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SignUpForm } from "@/src/components/forms/sign-up-form";
+import { SignUpForm } from "~/components/forms/sign-up-form";
 import {
   Card,
   CardContent,
@@ -10,8 +10,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { getCallbackURL } from "@/src/lib/shared";
+} from "~/components/ui/card";
+import { getCallbackURL } from "~/lib/shared";
 
 export function SignUp() {
   const router = useRouter();
