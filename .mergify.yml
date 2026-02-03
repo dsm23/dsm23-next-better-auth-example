@@ -1,5 +1,6 @@
 shared:
   common: &common_checks
+    - check-success = build
     - check-success = codeql (actions)
     - check-success = codeql (javascript)
     - check-success = codeql (typescript)
