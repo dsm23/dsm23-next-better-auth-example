@@ -7,8 +7,27 @@ shared:
     - check-success = dependency-review
     - check-success = format
     - check-success = lint
-    - check-success = pr-title
     - check-success = zizmor
+
+merge_protections:
+  - name: Do not merge outdated PRs
+    description: Make sure PRs are almost up to date before merging
+    if:
+      - base = main
+    success_conditions:
+      - "#commits-behind = 0"
+  - name: Enforce conventional commit
+    description: Make sure that we follow https://www.conventionalcommits.org/en/v1.0.0/
+    if:
+      - base = main
+    success_conditions:
+      - "title ~=
+        ^(fix|feat|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\(.+\
+        \\))?:"
+
+merge_protections_settings:
+  reporting_method: check-runs
+  post_comment: true
 
 pull_request_rules:
   - name: automatic approval
