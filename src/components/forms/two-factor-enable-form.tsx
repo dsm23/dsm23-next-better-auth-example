@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import QRCode from "react-qr-code";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import * as z from "zod";
 import { Button } from "~/components/ui/button";
@@ -93,7 +93,7 @@ export function TwoFactorEnableForm({ onSuccess }: TwoFactorEnableFormProps) {
           <QRCode value={totpURI} />
         </div>
         <div className="flex items-center justify-center gap-2">
-          <p className="text-muted-foreground text-sm">Copy URI to clipboard</p>
+          <p className="text-sm text-muted-foreground">Copy URI to clipboard</p>
           <CopyButton textToCopy={totpURI} />
         </div>
         <form

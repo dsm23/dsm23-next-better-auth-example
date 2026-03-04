@@ -115,7 +115,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
           </Avatar>
           <div>
             <p>{activeOrganization?.name || "Personal"}</p>
-            <p className="text-muted-foreground text-xs">
+            <p className="text-xs text-muted-foreground">
               {activeOrganization?.members?.length || 1} members
             </p>
           </div>
@@ -124,7 +124,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
       <CardContent>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex grow flex-col gap-2">
-            <p className="border-b-foreground/10 border-b-2 font-medium">
+            <p className="border-b-2 border-b-foreground/10 font-medium">
               Members
             </p>
             <div className="flex flex-col gap-2">
@@ -150,7 +150,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
                       </Avatar>
                       <div>
                         <p className="text-sm">{member.user.name}</p>
-                        <p className="text-muted-foreground text-xs">
+                        <p className="text-xs text-muted-foreground">
                           {member.role}
                         </p>
                       </div>
@@ -191,7 +191,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
                     </Avatar>
                     <div>
                       <p className="text-sm">{session?.user.name}</p>
-                      <p className="text-muted-foreground text-xs">Owner</p>
+                      <p className="text-xs text-muted-foreground">Owner</p>
                     </div>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
             </div>
           </div>
           <div className="flex grow flex-col gap-2">
-            <p className="border-b-foreground/10 border-b-2 font-medium">
+            <p className="border-b-2 border-b-foreground/10 font-medium">
               Invites
             </p>
             <div className="flex flex-col gap-2">
@@ -228,7 +228,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
                       >
                         <div>
                           <p className="text-sm">{invitation.email}</p>
-                          <p className="text-muted-foreground text-xs">
+                          <p className="text-xs text-muted-foreground">
                             {invitation.role}
                           </p>
                         </div>
@@ -263,7 +263,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
                 (invitation) => invitation.status === "pending",
               ).length === 0 && (
                 <motion.p
-                  className="text-muted-foreground text-sm"
+                  className="text-sm text-muted-foreground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -272,7 +272,7 @@ const OrganizationCard = (props: { session: Session | null }) => {
                 </motion.p>
               )}
               {!activeOrganization?.id && (
-                <Label className="text-muted-foreground text-xs">
+                <Label className="text-xs text-muted-foreground">
                   You can&apos;t invite members to your personal workspace.
                 </Label>
               )}
@@ -358,7 +358,7 @@ function OrganizationCardSkeleton() {
       <CardContent>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex grow flex-col gap-2">
-            <p className="border-b-foreground/10 border-b-2 font-medium">
+            <p className="border-b-2 border-b-foreground/10 font-medium">
               Members
             </p>
             <div className="flex flex-col gap-2">
@@ -372,7 +372,7 @@ function OrganizationCardSkeleton() {
             </div>
           </div>
           <div className="flex grow flex-col gap-2">
-            <p className="border-b-foreground/10 border-b-2 font-medium">
+            <p className="border-b-2 border-b-foreground/10 font-medium">
               Invites
             </p>
             <Skeleton className="h-4 w-32" />

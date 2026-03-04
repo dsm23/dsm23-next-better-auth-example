@@ -83,8 +83,8 @@ export default async function Page() {
         </div>
         <div className="flex w-full max-w-xl flex-col gap-4">
           <div className="flex flex-col flex-wrap gap-3 pt-2">
-            <div className="bg-secondary/70 border border-dashed p-2">
-              <div className="text-muted-foreground flex items-center justify-center gap-2 text-xs">
+            <div className="border border-dashed bg-secondary/70 p-2">
+              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <span className="text-center">
                   All features on this demo are implemented with Better Auth
                   without any custom backend code
@@ -94,7 +94,7 @@ export default async function Page() {
             <div className="flex flex-wrap justify-center gap-2">
               {features.map((feature) => (
                 <a
-                  className="text-muted-foreground hover:text-foreground hover:border-foreground flex cursor-pointer items-center gap-1 border-b pb-1 text-xs transition-all duration-150 ease-in-out"
+                  className="flex cursor-pointer items-center gap-1 border-b pb-1 text-xs text-muted-foreground transition-all duration-150 ease-in-out hover:border-foreground hover:text-foreground"
                   key={feature.name}
                   href={feature.link}
                 >

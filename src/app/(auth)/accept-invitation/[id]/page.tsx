@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { AlertCircle, CheckIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { AlertCircle, CheckIcon, XIcon } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -176,8 +176,8 @@ function InvitationError() {
     <Card className="mx-auto w-full max-w-md">
       <CardHeader>
         <div className="flex items-center space-x-2">
-          <AlertCircle className="text-destructive h-6 w-6" />
-          <CardTitle className="text-destructive text-xl">
+          <AlertCircle className="h-6 w-6 text-destructive" />
+          <CardTitle className="text-xl text-destructive">
             Invitation Error
           </CardTitle>
         </div>
@@ -186,7 +186,7 @@ function InvitationError() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground mb-4 text-sm">
+        <p className="mb-4 text-sm text-muted-foreground">
           The invitation you're trying to access is either invalid or you don't
           have the correct permissions. Please check your email for a valid
           invitation or contact the person who sent it.

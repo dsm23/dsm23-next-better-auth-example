@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 import { ForgetPasswordForm } from "~/components/forms/forget-password-form";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";

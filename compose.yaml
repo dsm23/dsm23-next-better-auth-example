@@ -1,0 +1,138 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # drizzle
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: better_auth
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres-kysely:
+    image: postgres:latest
+    container_name: postgres-kysely
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: better_auth
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-kysely_data:/var/lib/postgresql
+
+  postgres-kysely2:
+    image: postgres:latest
+    container_name: postgres-kysely2
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: better_auth
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres-kysely2_data:/var/lib/postgresql
+
+  postgres-prisma:
+    image: postgres:latest
+    container_name: postgres-prisma
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: better_auth
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-prisma_data:/var/lib/postgresql
+
+  # Drizzle tests
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: better_auth
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mysql-kysely:
+    image: mysql:latest
+    container_name: mysql-kysely
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: better_auth
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-kysely_data:/var/lib/mysql
+
+  mysql-prisma:
+    image: mysql:latest
+    container_name: mysql-prisma
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: better_auth
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-prisma_data:/var/lib/mysql
+
+volumes:
+  mongodb_data:
+  redis_data:
+  postgres_data:
+  postgres-kysely_data:
+  postgres-prisma_data:
+  mysql_data:
+  mysql-kysely_data:
+  mysql-prisma_data:
+  postgres-kysely2_data:

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { Check, Loader2, X } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
@@ -62,18 +62,18 @@ export default function Page() {
         <div className="space-y-4">
           <div className="text-center">
             <h1 className="text-2xl font-bold">Approve Device</h1>
-            <p className="text-muted-foreground mt-2">
+            <p className="mt-2 text-muted-foreground">
               A device is requesting access to your account
             </p>
           </div>
 
           <div className="space-y-4">
-            <div className="bg-muted rounded-lg p-4">
+            <div className="rounded-lg bg-muted p-4">
               <p className="text-sm font-medium">Device Code</p>
               <p className="font-mono text-lg">{userCode}</p>
             </div>
 
-            <div className="bg-muted rounded-lg p-4">
+            <div className="rounded-lg bg-muted p-4">
               <p className="text-sm font-medium">Signed in as</p>
               <p>{session.user.email}</p>
             </div>

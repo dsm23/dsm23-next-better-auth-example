@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { Check } from "lucide-react";
+import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 
@@ -16,13 +16,13 @@ export default function Page() {
 
           <div>
             <h1 className="text-2xl font-bold">Device Approved</h1>
-            <p className="text-muted-foreground mt-2">
+            <p className="mt-2 text-muted-foreground">
               The device has been successfully authorized to access your
               account.
             </p>
           </div>
 
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-muted-foreground">
             You can now return to your device to continue.
           </p>
 

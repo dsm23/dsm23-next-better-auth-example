@@ -115,10 +115,10 @@ export default function Page() {
           <CardContent>
             {isPending ? (
               <div className="flex justify-center py-4">
-                <Loader2 className="text-muted-foreground h-8 w-8 animate-spin" />
+                <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
               </div>
             ) : error ? (
-              <div className="bg-destructive/10 text-destructive rounded-md p-4">
+              <div className="rounded-md bg-destructive/10 p-4 text-destructive">
                 Error: {error.message}
               </div>
             ) : session ? (
@@ -131,7 +131,7 @@ export default function Page() {
                       className="h-12 w-12 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="bg-muted flex h-12 w-12 items-center justify-center rounded-full">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
                       <span className="text-lg font-medium">
                         {session.user.name?.charAt(0) ||
                           session.user.email?.charAt(0)}
@@ -140,13 +140,13 @@ export default function Page() {
                   )}
                   <div>
                     <p className="font-medium">{session.user.name}</p>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-sm text-muted-foreground">
                       {session.user.email}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-muted rounded-md p-4">
+                <div className="rounded-md bg-muted p-4">
                   <p className="mb-2 text-sm font-medium">Session Details:</p>
                   <pre className="max-h-40 overflow-auto text-xs">
                     {JSON.stringify(session, null, 2)}
@@ -154,7 +154,7 @@ export default function Page() {
                 </div>
               </div>
             ) : (
-              <div className="text-muted-foreground py-8 text-center">
+              <div className="py-8 text-center text-muted-foreground">
                 <p>Sign in to view your session information</p>
               </div>
             )}

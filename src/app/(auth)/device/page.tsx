@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
@@ -49,7 +49,7 @@ export default function Page() {
         <div className="space-y-4">
           <div className="text-center">
             <h1 className="text-2xl font-bold">Device Authorization</h1>
-            <p className="text-muted-foreground mt-2">
+            <p className="mt-2 text-muted-foreground">
               Enter the code displayed on your device
             </p>
           </div>

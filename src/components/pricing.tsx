@@ -92,7 +92,7 @@ export function Pricing({
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
           {title}
         </h2>
-        <p className="text-muted-foreground whitespace-pre-line">
+        <p className="whitespace-pre-line text-muted-foreground">
           {description}
         </p>
       </div>
@@ -138,8 +138,8 @@ export function Pricing({
               opacity: { duration: 0.5 },
             }}
             className={cn(
-              `bg-background relative rounded-sm border p-6 text-center lg:flex lg:flex-col lg:justify-center`,
-              plan.isPopular ? "border-border border-2" : "border-border",
+              `relative rounded-sm border bg-background p-6 text-center lg:flex lg:flex-col lg:justify-center`,
+              plan.isPopular ? "border-2 border-border" : "border-border",
               "flex flex-col",
               !plan.isPopular && "mt-5",
               index === 0 || index === 2
@@ -150,19 +150,19 @@ export function Pricing({
             )}
           >
             {plan.isPopular && (
-              <div className="bg-primary absolute top-0 right-0 flex items-center rounded-tr-sm rounded-bl-sm px-2 py-0.5">
-                <Star className="text-primary-foreground h-4 w-4 fill-current" />
-                <span className="text-primary-foreground ml-1 font-sans font-semibold">
+              <div className="absolute top-0 right-0 flex items-center rounded-tr-sm rounded-bl-sm bg-primary px-2 py-0.5">
+                <Star className="h-4 w-4 fill-current text-primary-foreground" />
+                <span className="ml-1 font-sans font-semibold text-primary-foreground">
                   Popular
                 </span>
               </div>
             )}
             <div className="flex flex-1 flex-col">
-              <p className="text-muted-foreground mt-2 text-base font-semibold">
+              <p className="mt-2 text-base font-semibold text-muted-foreground">
                 {plan.name}
               </p>
               <div className="mt-6 flex items-center justify-center gap-x-2">
-                <span className="text-foreground text-5xl font-bold tracking-tight">
+                <span className="text-5xl font-bold tracking-tight text-foreground">
                   <NumberFlow
                     value={
                       isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
@@ -182,20 +182,20 @@ export function Pricing({
                   />
                 </span>
                 {plan.period !== "Next 3 months" && (
-                  <span className="text-muted-foreground text-sm leading-6 font-semibold tracking-wide">
+                  <span className="text-sm leading-6 font-semibold tracking-wide text-muted-foreground">
                     / {plan.period}
                   </span>
                 )}
               </div>
 
-              <p className="text-muted-foreground text-xs leading-5">
+              <p className="text-xs leading-5 text-muted-foreground">
                 {isMonthly ? "billed monthly" : "billed annually"}
               </p>
 
               <ul className="mt-5 flex flex-col gap-2">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <CheckIcon className="text-primary mt-1 h-4 w-4 shrink-0" />
+                    <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-primary" />
                     <span className="text-left">{feature}</span>
                   </li>
                 ))}
@@ -214,7 +214,7 @@ export function Pricing({
                     variant: "outline",
                   }),
                   "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter",
-                  "hover:ring-primary hover:bg-primary hover:text-primary-foreground transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-offset-1",
+                  "transform-gpu ring-offset-current transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground hover:ring-2 hover:ring-primary hover:ring-offset-1",
                   plan.isPopular
                     ? "bg-primary text-primary-foreground"
                     : "bg-background text-foreground",
@@ -222,7 +222,7 @@ export function Pricing({
               >
                 {plan.buttonText}
               </Button>
-              <p className="text-muted-foreground mt-6 text-xs leading-5">
+              <p className="mt-6 text-xs leading-5 text-muted-foreground">
                 {plan.description}
               </p>
             </div>

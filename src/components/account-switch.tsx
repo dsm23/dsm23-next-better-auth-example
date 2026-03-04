@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { ChevronDown, PlusCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {
@@ -20,9 +20,9 @@ import {
 import { getQueryClient } from "~/data/query-client";
 import { userKeys } from "~/data/user/keys";
 import { useSessionQuery } from "~/data/user/session-query";
-import { authClient } from "~/lib/auth-client";
 import type { SessionData } from "~/data/user/session-query";
 import type { DeviceSession } from "~/lib/auth";
+import { authClient } from "~/lib/auth-client";
 
 export default function AccountSwitcher({
   deviceSessions,

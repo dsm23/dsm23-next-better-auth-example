@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Key } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Key } from "lucide-react";
 import { toast } from "sonner";
 import { SignInForm } from "~/components/forms/sign-in-form";
 import { LastUsedIndicator } from "~/components/last-used-indicator";
@@ -172,7 +172,7 @@ export default function SignIn() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background text-muted-foreground px-2">
+              <span className="bg-background px-2 text-muted-foreground">
                 Or continue with
               </span>
             </div>

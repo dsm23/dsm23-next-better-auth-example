@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
-import Link from "next/link";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
+import Link from "next/link";
 import { toast } from "sonner";
 import * as z from "zod";
 import { Button } from "~/components/ui/button";
@@ -107,7 +107,7 @@ export function SignInForm({
                 <FieldLabel htmlFor="sign-in-password">Password</FieldLabel>
                 <Link
                   href="/forget-password"
-                  className="text-foreground ml-auto inline-block text-sm underline"
+                  className="ml-auto inline-block text-sm text-foreground underline"
                 >
                   Forgot your password?
                 </Link>

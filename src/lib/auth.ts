@@ -6,6 +6,7 @@ import { sso } from "@better-auth/sso";
 import { stripe } from "@better-auth/stripe";
 import { LibsqlDialect } from "@libsql/kysely-libsql";
 import { APIError, betterAuth } from "better-auth";
+import type { BetterAuthOptions } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import {
   admin,
@@ -21,11 +22,10 @@ import {
   organization,
   twoFactor,
 } from "better-auth/plugins";
+import type { Organization } from "better-auth/plugins";
 import { MysqlDialect } from "kysely";
 import { createPool } from "mysql2/promise";
 import { Stripe } from "stripe";
-import type { BetterAuthOptions } from "better-auth";
-import type { Organization } from "better-auth/plugins";
 
 const _from = process.env.BETTER_AUTH_EMAIL || "delivered@resend.dev";
 const _to = process.env.TEST_EMAIL || "";
