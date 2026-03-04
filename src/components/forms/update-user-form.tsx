@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, X } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
+import Image from "next/image";
 import * as z from "zod";
 import { Button } from "~/components/ui/button";
 import {
@@ -126,7 +126,7 @@ export function UpdateUserForm({
                 accept="image/*"
                 onChange={handleImageChange}
                 disabled={updateUserMutation.isPending}
-                className="text-muted-foreground w-full"
+                className="w-full text-muted-foreground"
               />
               {imagePreview && (
                 <X

@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { mcpHandler } from "@better-auth/oauth-provider";
 import { createMcpHandler } from "mcp-handler";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import * as z from "zod";
 
 const baseUrl = process.env.BETTER_AUTH_URL || "https://demo.better-auth.com";

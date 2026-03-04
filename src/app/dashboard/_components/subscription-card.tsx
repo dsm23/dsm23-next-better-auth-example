@@ -307,7 +307,7 @@ function ChangePlanDialog(props: {
               </Button>
             )}
             {props.cancelAtPeriodEnd && (
-              <p className="text-muted-foreground text-center text-sm">
+              <p className="text-center text-sm text-muted-foreground">
                 Your subscription will be canceled at the end of the billing
                 period.
               </p>

@@ -1,6 +1,6 @@
+import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { auth } from "~/lib/auth";

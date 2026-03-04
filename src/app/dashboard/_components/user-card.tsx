@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { MobileIcon } from "@radix-ui/react-icons";
 import {
   Edit,
@@ -16,6 +15,7 @@ import {
   StopCircle,
   Trash,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { UAParser } from "ua-parser-js";
 import { ChangePasswordForm } from "~/components/forms/change-password-form";
@@ -55,8 +55,8 @@ import {
 import { useRevokeSessionMutation } from "~/data/user/revoke-session-mutation";
 import { useSessionQuery } from "~/data/user/session-query";
 import { useSignOutMutation } from "~/data/user/sign-out-mutation";
-import { authClient } from "~/lib/auth-client";
 import type { Session } from "~/lib/auth";
+import { authClient } from "~/lib/auth-client";
 
 const UserCard = (props: {
   session: Session | null;
@@ -349,7 +349,7 @@ function ChangePassword() {
               d="M2.5 18.5v-1h19v1zm.535-5.973l-.762-.442l.965-1.693h-1.93v-.884h1.93l-.965-1.642l.762-.443L4 9.066l.966-1.643l.761.443l-.965 1.642h1.93v.884h-1.93l.965 1.693l-.762.442L4 10.835zm8 0l-.762-.442l.966-1.693H9.308v-.884h1.93l-.965-1.642l.762-.443L12 9.066l.966-1.643l.761.443l-.965 1.642h1.93v.884h-1.93l.965 1.693l-.762.442L12 10.835zm8 0l-.762-.442l.966-1.693h-1.931v-.884h1.93l-.965-1.642l.762-.443L20 9.066l.966-1.643l.761.443l-.965 1.642h1.93v.884h-1.93l.965 1.693l-.762.442L20 10.835z"
             ></path>
           </svg>
-          <span className="text-muted-foreground text-sm">Change Password</span>
+          <span className="text-sm text-muted-foreground">Change Password</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="w-11/12 sm:max-w-[425px]">
@@ -545,7 +545,7 @@ function ListPasskeys() {
             </TableBody>
           </Table>
         ) : (
-          <p className="text-muted-foreground text-sm">No passkeys found</p>
+          <p className="text-sm text-muted-foreground">No passkeys found</p>
         )}
         {!data?.length && (
           <div className="flex flex-col gap-2">

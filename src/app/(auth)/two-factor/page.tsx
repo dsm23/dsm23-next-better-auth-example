@@ -28,7 +28,7 @@ export default function Page() {
         <CardContent>
           <TwoFactorTotpForm onSuccess={() => router.push("/dashboard")} />
         </CardContent>
-        <CardFooter className="text-muted-foreground gap-2 text-sm">
+        <CardFooter className="gap-2 text-sm text-muted-foreground">
           <Link href="/two-factor/otp">
             <Button variant="link" size="sm">
               Switch to Email Verification

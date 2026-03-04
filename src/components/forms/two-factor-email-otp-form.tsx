@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2, Mail } from "lucide-react";
-import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "~/components/ui/button";
 import {
@@ -108,7 +108,7 @@ export function TwoFactorEmailOtpForm({
                 One-Time Password
               </FieldLabel>
               {message && (
-                <p className="text-muted-foreground flex items-center gap-1 py-1 text-sm">
+                <p className="flex items-center gap-1 py-1 text-sm text-muted-foreground">
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
                   {message}
                 </p>
